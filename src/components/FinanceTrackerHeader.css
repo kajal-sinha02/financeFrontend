@@ -1,0 +1,116 @@
+/* Background container with gradient and wave effect */
+.finance-tracker-header {
+    background: rgba(25, 25, 25, 0.7); /* Semi-transparent dark background */
+    color: white;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between content and image */
+    padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    font-family: 'Arial', sans-serif;
+    padding-left: 100px;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+/* Moving gradient background */
+.finance-tracker-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, #240090, #000000, #1E005A, #4B0082, #240090);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease-in-out infinite;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Content styling */
+.content {
+    z-index: 2; /* Ensure the text is above the background */
+}
+
+/* Title styling */
+.title {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    font-size: 60px; /* Default font size */
+    margin: 0;
+    font-weight: 400;
+    animation: textAnimation 1s ease-in-out; /* Optional animation */
+}
+
+/* Image container styling */
+.image-container {
+    /* z-index: 2; Ensure the image is above the background */
+    margin-top: 80px;
+   
+}
+.image-container img {
+    height: auto; /* Maintain aspect ratio */
+    width: 750px; /* Set a specific width for the image */
+    border-radius: 10px; /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+    height: 400px;
+    margin-right: 50px;
+}
+
+/* Responsive font sizes and margins */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 50px; /* Adjusted font size for medium screens */
+    }
+    .finance-tracker-header {
+        background: rgba(25, 25, 25, 0.7); /* Semi-transparent dark background */
+        color: white;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        padding: 30px 40px;
+        position: relative;
+        overflow: hidden;
+        height: 750px;
+        font-family: 'Arial', sans-serif;
+        backdrop-filter: blur(10px); /* Frosted glass effect */
+    }
+    .image-container img {
+        
+       
+
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 40px; /* Adjusted font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 30px; /* Further adjusted font size for mobile screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 24px; /* Smaller font size for very small screens */
+    }
+}
+
+/* Optional text animation */
+@keyframes textAnimation {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}

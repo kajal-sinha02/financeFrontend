@@ -1,0 +1,132 @@
+/* Dark theme navbar */
+.navbar {
+    background-color: rgba(26, 27, 58, 0.6); /* Semi-transparent dark background */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    position: fixed; /* Stick to the top of the page */
+    top: 0; /* Align to the top */
+    left: 0; /* Ensure it stretches from the left */
+    right: 0; /* Ensure it stretches to the right */
+    z-index: 1000; /* Higher z-index to stay above other content */
+}
+
+/* Title styling */
+.navbar-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    margin-left: 79px; /* Default margin for larger screens */
+    font-weight: bolder;
+}
+
+/* Navbar items container */
+.navbar-items {
+    display: flex; /* Flex layout for nav items */
+    align-items: center; /* Center align items vertically */
+}
+
+/* Individual navbar item styling */
+.navbar-item {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 20px; /* Space between nav items */
+    font-family: 'Montserrat', sans-serif; /* Use the same font */
+    font-size: 16px; /* Same font size as the title */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for navbar items */
+.navbar-item:hover {
+    color: #A154FA; /* Change color on hover */
+}
+
+/* Login button styling */
+.navbar-button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #020101; /* Slightly lighter dark color */
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  
+}
+
+/* Hover effect for the button */
+.navbar-button:hover {
+    background-color: #242024; /* Change to a lighter shade on hover */
+}
+
+/* Dropdown menu styles */
+.navbar-items {
+    display: none; /* Hide items by default on small screens */
+}
+
+.navbar-items.open {
+    display: flex; /* Show dropdown items when open */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position below the navbar */
+    top: 50px; /* Position below the navbar */
+    left: 0; /* Align to the left */
+    background-color: rgba(26, 27, 58, 0.9); /* Dark background for dropdown */
+    width: 100%; /* Full width */
+    z-index: 999; /* Ensure it appears above other content */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .navbar-items {
+        display: flex; /* Show items by default on larger screens */
+        position: static; /* Position normally on larger screens */
+    }
+    .navbar-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 13px; /* Further reduced font size for mobile */
+        margin-left: 20px; /* Further adjusted margin for mobile screens */
+        margin-bottom: 10px; /* Add some spacing below the title */
+    }
+
+    .navbar-button {
+        width: 15%; /* Full-width button on mobile */
+        padding: 10px; /* Increased padding for better touch targets */
+        margin-left: 20px; /* Align with title */
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button on mobile */
+        font-size: 24px; /* Size of the toggle button */
+        background: none; /* No background */
+        border: none; /* No border */
+        color: white; /* Color of the toggle button */
+        cursor: pointer; /* Pointer cursor */
+    }
+}
+
+/* Additional media queries as needed */
+@media (max-width: 576px) {
+    .navbar-title {
+        font-size: 12px; 
+        margin-left: 10px;
+    }
+
+    .navbar-button {
+        font-size: 14px;
+        
+    }
+
+    .navbar-item {
+        font-size: 10px;
+    }
+}
